@@ -1,39 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
-  Features
-  Company
-  Careers
-  About
-
-  Login
-  Register
-
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @font-face {
+        font-family: Epilogue;
+        src: url("./fonts/Epilogue-VariableFont_wght.ttf");
+      }
+      body {
+        font-family: Epilogue;
+        margin: 0;
+      }
+      .desktop-header {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 30px 45px;
+      }
+      .header-menu {
+        display: flex;
+      }
+      .header-menu > * {
+        margin-right: 40px;
+      }
+      .header-logo {
+        margin-right: 30px;
+      }
+      .header-menu-btn {
+        cursor: pointer;
+      }
+      .header-menu-btn a {
+        margin: 0px 35px;
+      }
+      .header-menu a{
+        color:black;
+        text-decoration: none;
+      }
+      .menu-btn-head {
+        display: flex;
+      }
+      .menu-btn-body {
+        /* display: flex;
+        flex-direction: column; */
+        display: none;
+      }
+      .arrow-up{
+        margin-left: 8px;
+      }
+      .header-buttons button{
+        background: white;
+        padding: 10px 15px;
+        border: none;
+        margin: 0px 15px;
+      }
+      .header-buttons button:hover{
+        border: 2px solid black !important;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="desktop-header">
+      <div class="header-menu">
+        <div class="header-logo">
+          <img src="./images/logo.svg" alt="logo" />
+        </div>
+        <div class="header-menu-btn">
+          <div class="menu-btn-head">
+            Features
+            <div class="arrow-up">
+              <img src="./images/icon-arrow-up.svg" alt="arrow-up" />
+            </div>
+          </div>
+          <div class="menu-btn-body">
+            <a href="#">Todo List</a>
+            <a href="#">Calendar</a>
+            <a href="#">Reminders</a>
+            <a href="#">Planning</a>
+          </div>
+        </div>
+        <div class="header-menu-btn">
+          <div class="menu-btn-head">
+            Company
+            <div class="arrow-up">
+              <img src="./images/icon-arrow-up.svg" alt="arrow-up" />
+            </div>
+          </div>
+          <div class="menu-btn-body">
+            <a href="#">History</a>
+            <a href="#">Our Team</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+        <a href="#">Careers</a>
+        <a href="#">About</a>
+      </div>
+      <div class="header-buttons">
+        <button>Login</button>
+        <button>Register</button>
+      </div>
+    </div>
+    <div class="mobile-header"></div>
+    <div class="container">
+      <div class="intro-section"></div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/MSLadanov">MSLadanov</a>.
+    </div>
+  </body>
 </html>
