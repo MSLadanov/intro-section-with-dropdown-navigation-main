@@ -44,16 +44,16 @@
         margin-right: 40px;
       }
       .header-logo {
-        margin-right: 30px;
+        margin-right: 55px;
       }
       .header-menu-btn {
         cursor: pointer;
       }
       .header-menu-btn a {
-        margin: 0px 35px;
+        
       }
-      .header-menu a{
-        color:black;
+      .header-menu a {
+        color: black;
         text-decoration: none;
       }
       .menu-btn-head {
@@ -63,19 +63,36 @@
         /* display: flex;
         flex-direction: column; */
         display: none;
+        padding: 20px 30px;
       }
-      .arrow-up{
+      .arrow {
         margin-left: 8px;
       }
-      .header-buttons button{
+      .hidden {
+        display: none;
+      }
+      .header-buttons button {
         background: white;
         padding: 10px 15px;
         border: none;
         margin: 0px 15px;
       }
-      .header-buttons button:hover{
+      .header-buttons button:hover {
         border: 2px solid black !important;
         border-radius: 12px;
+      }
+      .menu-active {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: 3px 11px 26px 25px rgba(34, 60, 80, 0.2);
+        border-radius:16px;
+      }
+      .menu-btn-item{
+        margin:15px 0px ;
+      }
+      .menu-btn-item img{
+        margin-right: 8px;
       }
     </style>
   </head>
@@ -86,30 +103,54 @@
           <img src="./images/logo.svg" alt="logo" />
         </div>
         <div class="header-menu-btn">
-          <div class="menu-btn-head">
+          <div class="menu-btn-head" data-attr="features">
             Features
-            <div class="arrow-up">
+            <div class="arrow">
               <img src="./images/icon-arrow-up.svg" alt="arrow-up" />
+            </div>
+            <div class="arrow hidden">
+              <img src="./images/icon-arrow-down.svg" alt="arrow-down" />
             </div>
           </div>
           <div class="menu-btn-body">
-            <a href="#">Todo List</a>
-            <a href="#">Calendar</a>
-            <a href="#">Reminders</a>
-            <a href="#">Planning</a>
+            <div class="menu-btn-item">
+              <img src="./images/icon-todo.svg" alt="" />
+              <a href="#">Todo List</a>
+            </div>
+            <div class="menu-btn-item">
+              <img src="./images/icon-calendar.svg" alt="" />
+              <a href="#">Calendar</a>
+            </div>
+            <div class="menu-btn-item">
+              <img src="./images/icon-reminders.svg" alt="">
+              <a href="#">Reminders</a>
+            </div>
+            <div class="menu-btn-item">
+              <img src="./images/icon-planning.svg" alt="">
+              <a href="#">Planning</a>
+            </div>
           </div>
         </div>
         <div class="header-menu-btn">
-          <div class="menu-btn-head">
+          <div class="menu-btn-head" data-attr="company">
             Company
-            <div class="arrow-up">
+            <div class="arrow">
               <img src="./images/icon-arrow-up.svg" alt="arrow-up" />
+            </div>
+            <div class="arrow hidden">
+              <img src="./images/icon-arrow-down.svg" alt="arrow-down" />
             </div>
           </div>
           <div class="menu-btn-body">
-            <a href="#">History</a>
-            <a href="#">Our Team</a>
-            <a href="#">Blog</a>
+            <div class="menu-btn-item">
+              <a href="#">History</a>
+            </div>
+            <div class="menu-btn-item">
+              <a href="#">Our Team</a>
+            </div>
+            <div class="menu-btn-item">
+              <a href="#">Blog</a>
+            </div>
           </div>
         </div>
         <a href="#">Careers</a>
@@ -130,5 +171,6 @@
         >Frontend Mentor</a
       >. Coded by <a href="https://github.com/MSLadanov">MSLadanov</a>.
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
