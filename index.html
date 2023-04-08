@@ -33,25 +33,25 @@
       }
       .desktop-header {
         display: flex;
+        width: 100vw;
         justify-content: space-between;
         align-content: center;
-        padding: 30px 45px;
+        padding: 30px 10px;
+        position: absolute;
+        z-index: 2;
       }
       .header-menu {
         display: flex;
       }
       .header-menu > * {
-       
       }
       .header-logo {
-
       }
       .header-menu-btn {
         cursor: pointer;
         margin-right: 20px;
       }
       .header-menu-btn a {
-        
       }
       .header-menu a {
         color: black;
@@ -62,7 +62,7 @@
         display: flex;
         justify-content: end;
       }
-      #flex-start{
+      #flex-start {
         justify-content: flex-start;
       }
       .menu-btn-body {
@@ -71,7 +71,7 @@
         height: 0px;
         overflow-y: hidden;
         padding: 0px 30px;
-        border-radius:16px;
+        border-radius: 16px;
       }
       .arrow {
         margin-left: 8px;
@@ -95,16 +95,72 @@
         flex-direction: column;
         height: auto;
         position: relative;
-        top:20px;
+        top: 10px;
+        z-index: 3;
         box-shadow: 3px 11px 26px 25px rgba(34, 60, 80, 0.2);
-        border-radius:16px;
+        border-radius: 16px;
         transition: 0.25s;
       }
-      .menu-btn-item{
-        margin:15px 0px ;
+      .menu-btn-item {
+        position: relative;
+        margin: 15px 0px;
       }
-      .menu-btn-item img{
+      .menu-btn-item img {
         margin-right: 8px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        padding: 80px 180px;
+      }
+      .intro-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 70px;
+      }
+      .intro-section-header {
+        font-size: 72px;
+        font-weight: bolder;
+      }
+      .intro-section-text {
+        color: hsl(0, 0%, 41%);
+        font-weight:500;
+        line-height: 30px;
+      }
+      .intro-section-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .section-left-body{
+        margin-top: 25%;
+      }
+      .section-left-body div{
+        margin-bottom: 45px;
+      }
+      .section-left-bottom {
+        display: flex;
+        justify-content: space-between;
+      }
+      .intro-section-right {
+        display: flex;
+        justify-content: center;
+      }
+      .intro-section-right img {
+        max-width: 75%;
+        height: auto;
+      }
+      .intro-section-btn button {
+        background: white;
+        padding: 15px 20px;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .intro-section-btn button:hover {
+        border: 1px solid black !important;
+        padding: 14px 19px;
+        border-radius: 12px;
       }
     </style>
   </head>
@@ -134,11 +190,11 @@
               <a href="#">Calendar</a>
             </div>
             <div class="menu-btn-item">
-              <img src="./images/icon-reminders.svg" alt="">
+              <img src="./images/icon-reminders.svg" alt="" />
               <a href="#">Reminders</a>
             </div>
             <div class="menu-btn-item">
-              <img src="./images/icon-planning.svg" alt="">
+              <img src="./images/icon-planning.svg" alt="" />
               <a href="#">Planning</a>
             </div>
           </div>
@@ -175,7 +231,31 @@
     </div>
     <div class="mobile-header"></div>
     <div class="container">
-      <div class="intro-section"></div>
+      <div class="intro-section">
+        <div class="intro-section-left">
+          <div class="section-left-body">
+            <div class="intro-section-header">Make remote&nbsp;work</div>
+            <div class="intro-section-text">
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </div>
+            <div class="intro-section-btn">
+              <button>Learn more</button>
+            </div>
+          </div>
+          <div class="section-left-bottom">
+            <div><img src="./images/client-databiz.svg" alt="databiz" /></div>
+            <div>
+              <img src="./images/client-audiophile.svg" alt="audiophile" />
+            </div>
+            <div><img src="./images/client-meet.svg" alt="meet" /></div>
+            <div><img src="./images/client-maker.svg" alt="maker" /></div>
+          </div>
+        </div>
+        <div class="intro-section-right">
+          <img src="./images/image-hero-desktop.png" alt="hero" />
+        </div>
+      </div>
     </div>
     <div class="attribution">
       Challenge by
