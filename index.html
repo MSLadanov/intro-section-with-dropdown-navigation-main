@@ -40,8 +40,13 @@
         position: absolute;
         z-index: 2;
       }
+      .mobile-header{
+        display: none;
+      }
       .header-menu {
         display: flex;
+        margin-left: 30px;
+        align-items:  center;
       }
       .header-menu > * {
       }
@@ -111,7 +116,7 @@
       .container {
         display: flex;
         justify-content: center;
-        padding: 80px 180px;
+        padding-top: 80px;
       }
       .intro-section {
         display: flex;
@@ -124,18 +129,19 @@
       }
       .intro-section-text {
         color: hsl(0, 0%, 41%);
-        font-weight:500;
+        font-weight: 500;
         line-height: 30px;
       }
       .intro-section-left {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin-right: 170px;
       }
-      .section-left-body{
+      .section-left-body {
         margin-top: 25%;
       }
-      .section-left-body div{
+      .section-left-body div {
         margin-bottom: 45px;
       }
       .section-left-bottom {
@@ -143,8 +149,15 @@
         justify-content: space-between;
       }
       .intro-section-right {
+        width: 100%;
         display: flex;
         justify-content: center;
+        background: url("./images/image-hero-desktop.png");
+        background-size: 100% 100%;
+        height: auto;
+      }
+      .intro-section-right-mobile {
+        display: none;
       }
       .intro-section-right img {
         max-width: 75%;
@@ -158,9 +171,67 @@
         font-weight: bold;
       }
       .intro-section-btn button:hover {
-        border: 1px solid black !important;
+        border: 1px solid hsl(0, 0%, 8%) !important;
         padding: 14px 19px;
         border-radius: 12px;
+      }
+      @media only screen and (max-width: 1200px) {
+        .intro-section-left {
+          margin-right: 80px;
+        }
+      }
+      @media only screen and (max-width: 1025px) {
+        .intro-section-left {
+          margin-right: 30px;
+        }
+      }
+      @media only screen and (max-width: 992px) {
+        .desktop-header{
+          display: none;
+        }
+        .mobile-header{
+          display: flex;
+        }
+        .intro-section {
+          flex-direction: column-reverse;
+          align-items: center;
+        }
+        .intro-section-right {
+          display: none;
+        }
+        .intro-section-left {
+          margin-right: 0px;
+        }
+        .section-left-body {
+          margin-top: 10%;
+        }
+        .intro-section-right-mobile {
+          display: flex;
+        }
+        .intro-section-right-mobile img {
+          display: flex;
+          max-width: 100%;
+          height: auto;
+        }
+        .section-left-body div {
+          text-align: center;
+          padding: 0px 30px;
+        }
+        .intro-section-header{
+          font-size: 48px;
+        }
+        .intro-section-btn button {
+        background: hsl(0, 0%, 8%);
+        color: hsl(0, 0%, 98%);
+        padding: 15px 20px;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .intro-section-btn button:hover {
+        color: hsl(0, 0%, 8%);
+        background: hsl(0, 0%, 98%);
+      }
       }
     </style>
   </head>
@@ -229,7 +300,7 @@
         <button>Register</button>
       </div>
     </div>
-    <div class="mobile-header"></div>
+    <div class="mobile-header"><h1>Coming soon</h1></div>
     <div class="container">
       <div class="intro-section">
         <div class="intro-section-left">
@@ -252,8 +323,9 @@
             <div><img src="./images/client-maker.svg" alt="maker" /></div>
           </div>
         </div>
-        <div class="intro-section-right">
-          <img src="./images/image-hero-desktop.png" alt="hero" />
+        <div class="intro-section-right"></div>
+        <div class="intro-section-right-mobile">
+          <img src="./images/image-hero-mobile.png" alt="hero-mobile" />
         </div>
       </div>
     </div>
