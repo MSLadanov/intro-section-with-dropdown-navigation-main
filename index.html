@@ -40,13 +40,55 @@
         position: absolute;
         z-index: 2;
       }
-      .mobile-header{
+       /* Tablet / Mobile navbar */
+
+       .mobile-navbar {
         display: none;
+        margin-bottom: 32px;
       }
+
+      .mobile-navbar-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .mobile-navbar-body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 0px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: white;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+      }
+
+      .mobile-navbar-body a {
+        margin: 20px;
+        color: hsl(240, 100%, 5%);
+        text-decoration: none;
+      }
+      .mobile-navbar-body a:hover {
+        color: hsl(35, 77%, 62%);
+      }
+      .navbar-burger {
+        cursor: pointer;
+      }
+      .navbar-burger-close {
+        cursor: pointer;
+        margin-right: 30px;
+        align-self: end;
+      }
+      /* Content */
       .header-menu {
         display: flex;
         margin-left: 30px;
-        align-items:  center;
+        padding-top: 10px;
       }
       .header-menu > * {
       }
@@ -189,8 +231,14 @@
         .desktop-header{
           display: none;
         }
-        .mobile-header{
+        .mobile-navbar {
           display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          margin-bottom: 0px;
+        }
+        .container{
+          padding-top: 0px;
         }
         .intro-section {
           flex-direction: column-reverse;
@@ -232,6 +280,51 @@
         color: hsl(0, 0%, 8%);
         background: hsl(0, 0%, 98%);
       }
+      /* mobile/tablet navbar */
+
+      .mobile-navbar .menu-btn-body{
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+      }
+      .header-buttons{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+      }
+      .header-buttons button{
+        height: 50px;
+        width: 200px;
+      }
+      .mobile-navbar-head{
+        padding: 20px;
+      }
+      .mobile-navbar-body{
+        padding-top: 20px;
+      }
+      .header-menu-btn{
+        padding: 20px;
+        margin-right: 0px;
+        justify-content: start;
+      }
+      .menu-btn-head{
+        justify-content: start;
+      }
+      .menu-active {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        position: relative;
+        top: 10px;
+        z-index: 3;
+        transition: 0.25s;
+      }
+      .mobile-navbar-body a {
+        padding: 20px;
+        margin: 0;
+      }
+      .menu-active {
+        box-shadow: none;
+      }
       }
     </style>
   </head>
@@ -241,7 +334,7 @@
         <div class="header-logo">
           <img src="./images/logo.svg" alt="logo" />
         </div>
-        <div class="header-menu-btn">
+        <div class="header-menu-btn"> 
           <div class="menu-btn-head" data-attr="features">
             Features
             <div class="arrow">
@@ -300,7 +393,79 @@
         <button>Register</button>
       </div>
     </div>
-    <div class="mobile-header"><h1>Coming soon</h1></div>
+    <div class="mobile-navbar">
+      <div class="mobile-navbar-head">
+        <div class="navbar-logo">
+          <img src="./images/logo.svg" alt="site-logo" />
+        </div>
+        <div class="navbar-burger">
+          <img src="./images/icon-menu.svg" alt="site-logo" />
+        </div>
+      </div>
+      <div class="mobile-navbar-body">
+        <div class="navbar-burger-close">
+          <img src="./images/icon-close-menu.svg" alt="site-logo" />
+        </div>
+        <div class="header-menu-btn"> 
+          <div class="menu-btn-head" data-attr="features">
+            Features
+            <div class="arrow">
+              <img src="./images/icon-arrow-up.svg" alt="arrow-up" />
+            </div>
+            <div class="arrow hidden">
+              <img src="./images/icon-arrow-down.svg" alt="arrow-down" />
+            </div>
+          </div>
+          <div class="menu-btn-body">
+            <div class="menu-btn-item">
+              <img src="./images/icon-todo.svg" alt="" />
+              <a href="#">Todo List</a>
+            </div>
+            <div class="menu-btn-item">
+              <img src="./images/icon-calendar.svg" alt="" />
+              <a href="#">Calendar</a>
+            </div>
+            <div class="menu-btn-item">
+              <img src="./images/icon-reminders.svg" alt="" />
+              <a href="#">Reminders</a>
+            </div>
+            <div class="menu-btn-item">
+              <img src="./images/icon-planning.svg" alt="" />
+              <a href="#">Planning</a>
+            </div>
+          </div>
+        </div>
+        <div class="header-menu-btn">
+          <div class="menu-btn-head" data-attr="company">
+            Company
+            <div class="arrow">
+              <img src="./images/icon-arrow-up.svg" alt="arrow-up" />
+            </div>
+            <div class="arrow hidden">
+              <img src="./images/icon-arrow-down.svg" alt="arrow-down" />
+            </div>
+          </div>
+          <div class="menu-btn-body">
+            <div class="menu-btn-item">
+              <a href="#">History</a>
+            </div>
+            <div class="menu-btn-item">
+              <a href="#">Our Team</a>
+            </div>
+            <div class="menu-btn-item">
+              <a href="#">Blog</a>
+            </div>
+          </div>
+        </div>
+        <a href="#">Careers</a>
+        <a href="#">About</a>
+        <div class="header-buttons">
+          <button>Login</button>
+          <button>Register</button>
+        </div>
+      </div>
+      </div>
+    </div>
     <div class="container">
       <div class="intro-section">
         <div class="intro-section-left">

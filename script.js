@@ -1,3 +1,5 @@
+// Dropdown
+
 function toggleMenu(e) {
   if (!document.querySelectorAll(".menu-active").length) {
     if (e.target.className === "menu-btn-head") {
@@ -19,6 +21,14 @@ function toggleMenu(e) {
   }
 }
 
+const handleOverEvent = function (e) {
+  toggleMenu(e);
+};
+
+const handleOutEvent = function (e) {
+  toggleOpenedMenu(e);
+};
+
 function toggleOpenedMenu(e) {
   e.target.parentElement.addEventListener("mouseleave", (event) => {
     toggleMenu(event);
@@ -27,9 +37,49 @@ function toggleOpenedMenu(e) {
 
 document
   .querySelectorAll(".menu-btn-head")
-  .forEach((item) => item.addEventListener("mouseover", (e) => toggleMenu(e)));
-document.querySelectorAll(".menu-btn-head").forEach((item) =>
-  item.addEventListener("mouseout", (e) => {
-    toggleOpenedMenu(e);
-  })
-);
+  .forEach((item) => item.addEventListener("mouseover", handleOverEvent));
+document
+  .querySelectorAll(".menu-btn-head")
+  .forEach((item) => item.addEventListener("mouseout", handleOutEvent));
+
+// Side menu mobile/tablet
+
+function openMobileMenu() {
+  document.querySelector(".mobile-navbar-body").style.width = "75%";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  document
+    .querySelectorAll(".menu-btn-head")
+    .forEach((item) => item.removeEventListener("mouseover", handleOverEvent));
+  document
+    .querySelectorAll(".menu-btn-head")
+    .forEach((item) => item.removeEventListener("mouseout", handleOutEvent));
+  document
+    .querySelectorAll(".menu-btn-head")
+    .forEach((item) => item.addEventListener("click", handleOverEvent));
+  document
+    .querySelectorAll(".menu-btn-head")
+    .forEach((item) => item.addEventListener("click", handleOutEvent));
+}
+
+function closeMobileMenu() {
+  document.querySelector(".mobile-navbar-body").style.width = "0";
+  document.body.style.backgroundColor = "white";
+}
+
+document
+  .querySelector(".navbar-burger")
+  .addEventListener("click", openMobileMenu);
+document
+  .querySelector(".navbar-burger-close")
+  .addEventListener("click", closeMobileMenu);
+
+document.querySelectorAll(".mobile-navbar .menu-btn-head").forEach((item) => {
+  item.addEventListener("click", function () {
+    let panel = item.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = ( panel.scrollHeight + 30) + "px";
+    }
+  });
+});
