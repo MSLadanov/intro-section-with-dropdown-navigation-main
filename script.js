@@ -47,18 +47,18 @@ document
 function openMobileMenu() {
   document.querySelector(".mobile-navbar-body").style.width = "75%";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-  document
-    .querySelectorAll(".menu-btn-head")
-    .forEach((item) => item.removeEventListener("mouseover", handleOverEvent));
-  document
-    .querySelectorAll(".menu-btn-head")
-    .forEach((item) => item.removeEventListener("mouseout", handleOutEvent));
-  document
-    .querySelectorAll(".menu-btn-head")
-    .forEach((item) => item.addEventListener("click", handleOverEvent));
-  document
-    .querySelectorAll(".menu-btn-head")
-    .forEach((item) => item.addEventListener("click", handleOutEvent));
+  // document
+  //   .querySelectorAll(".menu-btn-head")
+  //   .forEach((item) => item.removeEventListener("mouseover", handleOverEvent));
+  // document
+  //   .querySelectorAll(".menu-btn-head")
+  //   .forEach((item) => item.removeEventListener("mouseout", handleOutEvent));
+  // document
+  //   .querySelectorAll(".menu-btn-head")
+  //   .forEach((item) => item.addEventListener("click", handleOverEvent));
+  // document
+  //   .querySelectorAll(".menu-btn-head")
+  //   .forEach((item) => item.addEventListener("click", handleOutEvent));
 }
 
 function closeMobileMenu() {
@@ -73,13 +73,24 @@ document
   .querySelector(".navbar-burger-close")
   .addEventListener("click", closeMobileMenu);
 
-document.querySelectorAll(".mobile-navbar .menu-btn-head").forEach((item) => {
-  item.addEventListener("click", function () {
-    let panel = item.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = ( panel.scrollHeight + 30) + "px";
-    }
+document
+  .querySelectorAll(".mobile-navbar .mobile-menu-btn-head")
+  .forEach((item) => {
+    item.addEventListener("click", function () {
+      let panel = item.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 30 + "px";
+      }
+    });
   });
-});
+
+document.querySelector('.container').addEventListener("click", () => {
+  if(!!document.querySelector(".mobile-navbar-body").style.width){
+      console.log('close')
+      document.querySelector(".mobile-navbar-body").style.width = "0px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0)";
+  }
+}
+);
