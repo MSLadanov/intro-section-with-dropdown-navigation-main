@@ -47,18 +47,6 @@ document
 function openMobileMenu() {
   document.querySelector(".mobile-navbar-body").style.width = "75%";
   document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-  // document
-  //   .querySelectorAll(".menu-btn-head")
-  //   .forEach((item) => item.removeEventListener("mouseover", handleOverEvent));
-  // document
-  //   .querySelectorAll(".menu-btn-head")
-  //   .forEach((item) => item.removeEventListener("mouseout", handleOutEvent));
-  // document
-  //   .querySelectorAll(".menu-btn-head")
-  //   .forEach((item) => item.addEventListener("click", handleOverEvent));
-  // document
-  //   .querySelectorAll(".menu-btn-head")
-  //   .forEach((item) => item.addEventListener("click", handleOutEvent));
 }
 
 function closeMobileMenu() {
@@ -80,15 +68,20 @@ document
       let panel = item.nextElementSibling;
       if (panel.style.maxHeight) {
         panel.style.maxHeight = null;
+        item
+        .querySelectorAll(".arrow")
+        .forEach((item) => item.classList.toggle("hidden"));
       } else {
         panel.style.maxHeight = panel.scrollHeight + 30 + "px";
+        item
+        .querySelectorAll(".arrow")
+        .forEach((item) => item.classList.toggle("hidden"));
       }
     });
   });
 
 document.querySelector('.container').addEventListener("click", () => {
   if(!!document.querySelector(".mobile-navbar-body").style.width){
-      console.log('close')
       document.querySelector(".mobile-navbar-body").style.width = "0px";
       document.body.style.backgroundColor = "rgba(0,0,0,0)";
   }
